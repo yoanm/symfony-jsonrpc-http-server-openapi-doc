@@ -1,0 +1,12 @@
+services:
+  _defaults:
+    public: true
+
+  json_rpc_http_server_open_api_doc.provider:
+    class: Yoanm\SymfonyJsonRpcHttpServerOpenAPIDoc\Provider\DocProvider
+    arguments:
+      - '@event_dispatcher'
+      - '@json_rpc_http_server_doc.creator.http_server'
+      - '@json_rpc_http_server_open_api_doc_sdk.normalizer.doc'
+    tags: ['json_rpc_server_doc.doc_provider']
+
