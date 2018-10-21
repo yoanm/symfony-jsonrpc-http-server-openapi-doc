@@ -3,6 +3,7 @@
     "description": "Symfony bundle for easy JSON-RPC server OpenAPI 3.0.0 documentation",
     "license": "MIT",
     "type": "library",
+    "minimum-stability": "dev",
     "support": {
         "issues": "https://github.com/yoanm/symfony-jsonrpc-http-server-openapi-doc/issues"
     },
@@ -25,13 +26,11 @@
         }
     },
     "require": {
-        "php": ">=5.5",
-        "yoanm/jsonrpc-server-doc-sdk": "dev-feature/improve",
-        "yoanm/jsonrpc-http-server-openapi-doc-sdk": "dev-feature/improve",
-        "yoanm/symfony-jsonrpc-http-server-doc": "dev-feature/improve",
-        "symfony/http-foundation": "^3.0 || ^4.0",
+        "php": ">=7.1",
+        "yoanm/jsonrpc-server-doc-sdk": "dev-release/1.0.0",
+        "yoanm/jsonrpc-http-server-openapi-doc-sdk": "dev-release/1.0.0",
+        "yoanm/symfony-jsonrpc-http-server-doc": "dev-release/0.1.0",
         "symfony/http-kernel": "^3.0 || ^4.0",
-        "symfony/config": "^3.0 || ^4.0",
         "symfony/dependency-injection": "^3.0 || ^4.0"
     },
     "require-dev": {
