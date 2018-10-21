@@ -2,8 +2,7 @@
 namespace Yoanm\SymfonyJsonRpcHttpServerOpenAPIDoc\Provider;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use Yoanm\JsonRpcHttpServerOpenAPIDoc\Normalizer\DocNormalizer;
-use Yoanm\JsonRpcServerDoc\Domain\Model\HttpServerDoc;
+use Yoanm\JsonRpcHttpServerOpenAPIDoc\Infra\Normalizer\DocNormalizer;
 use Yoanm\SymfonyJsonRpcHttpServerDoc\Creator\HttpServerDocCreator;
 use Yoanm\SymfonyJsonRpcHttpServerDoc\Provider\DocProviderInterface;
 use Yoanm\SymfonyJsonRpcHttpServerOpenAPIDoc\Event\OpenAPIDocCreatedEvent;
@@ -16,7 +15,7 @@ class DocProvider implements DocProviderInterface
     /** @var EventDispatcherInterface */
     private $dispatcher;
     /** @var HttpServerDocCreator */
-    private $HttpServerDocCreator;
+    private $httpServerDocCreator;
     /** @var DocNormalizer */
     private $docNormalizer;
 
@@ -31,7 +30,7 @@ class DocProvider implements DocProviderInterface
         DocNormalizer $docNormalizer
     ) {
         $this->dispatcher = $dispatcher;
-        $this->HttpServerDocCreator = $HttpServerDocCreator;
+        $this->httpServerDocCreator = $HttpServerDocCreator;
         $this->docNormalizer = $docNormalizer;
     }
 
@@ -40,9 +39,9 @@ class DocProvider implements DocProviderInterface
      *
      * @return array
      */
-    public function getDoc($host = null)
+    public function getDoc($host = null) : array
     {
-        $rawDoc = $this->HttpServerDocCreator->create($host);
+        $rawDoc = $this->httpServerDocCreator->create($host);
 
         $openApiDoc = $this->docNormalizer->normalize($rawDoc);
 
@@ -55,7 +54,7 @@ class DocProvider implements DocProviderInterface
     /**
      * {@inheritdoc}
      */
-    public function supports($filename, $host = null)
+    public function supports($filename, $host = null) : bool
     {
         return 'openapi.json' === $filename;
     }

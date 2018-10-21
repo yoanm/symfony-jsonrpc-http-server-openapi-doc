@@ -1,0 +1,10 @@
+services:
+  _defaults:
+    public: true
+
+  # Normalizer
+  json_rpc_http_server_open_api_doc_sdk.normalizer.doc:
+    class: Yoanm\JsonRpcHttpServerOpenAPIDoc\Infra\Normalizer\DocNormalizer
+    arguments:
+     - '@json_rpc_http_server_open_api_doc_sdk.normalizer.app.component.external_schema_list'
+     - '@json_rpc_http_server_open_api_doc_sdk.normalizer.app.component.operation'
