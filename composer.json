@@ -27,7 +27,7 @@
     },
     "require": {
         "php": ">=7.1",
-        "yoanm/jsonrpc-server-doc-sdk": "dev-release/3.0.0",
+        "yoanm/jsonrpc-server-doc-sdk": "dev-release/1.0.0",
         "yoanm/jsonrpc-http-server-openapi-doc-sdk": "dev-release/1.0.0",
         "yoanm/symfony-jsonrpc-http-server-doc": "dev-release/0.1.0",
         "symfony/http-kernel": "^3.0 || ^4.0",
