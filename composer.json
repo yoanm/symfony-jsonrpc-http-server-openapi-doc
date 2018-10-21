@@ -3,6 +3,7 @@
     "description": "Symfony bundle for easy JSON-RPC server OpenAPI 3.0.0 documentation",
     "license": "MIT",
     "type": "library",
+    "minimum-stability": "dev",
     "support": {
         "issues": "https://github.com/yoanm/symfony-jsonrpc-http-server-openapi-doc/issues"
     },
