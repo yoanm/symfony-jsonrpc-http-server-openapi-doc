@@ -3,7 +3,7 @@ namespace Yoanm\SymfonyJsonRpcHttpServerOpenAPIDoc\Provider;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Yoanm\JsonRpcHttpServerOpenAPIDoc\Normalizer\DocNormalizer;
-use Yoanm\JsonRpcServerDoc\Model\HttpServerDoc;
+use Yoanm\JsonRpcServerDoc\Domain\Model\HttpServerDoc;
 use Yoanm\SymfonyJsonRpcHttpServerDoc\Creator\HttpServerDocCreator;
 use Yoanm\SymfonyJsonRpcHttpServerDoc\Provider\DocProviderInterface;
 use Yoanm\SymfonyJsonRpcHttpServerOpenAPIDoc\Event\OpenAPIDocCreatedEvent;

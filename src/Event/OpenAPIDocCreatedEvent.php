@@ -1,7 +1,7 @@
 <?php
 namespace Yoanm\SymfonyJsonRpcHttpServerOpenAPIDoc\Event;
 
-use Yoanm\JsonRpcServerDoc\Model\HttpServerDoc;
+use Yoanm\JsonRpcServerDoc\Domain\Model\HttpServerDoc;
 use Yoanm\SymfonyJsonRpcHttpServerDoc\Event\DocEvent;
 
 /**
@@ -17,11 +17,14 @@ class OpenAPIDocCreatedEvent extends DocEvent
     private $serverDoc;
 
     /**
-     * @param array                     $openAPIDoc
+     * @param array              $openAPIDoc
      * @param HttpServerDoc|null $serverDoc
      */
-    public function __construct(array $openAPIDoc, HttpServerDoc $serverDoc = null)
-    {
+    public function __construct(
+        array $openAPIDoc,
+        HttpServerDoc $serverDoc = null
+    ) {
+
         $this->openAPIDoc = $openAPIDoc;
         $this->serverDoc = $serverDoc;
     }
