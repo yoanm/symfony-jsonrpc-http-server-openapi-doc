@@ -23,7 +23,8 @@ class JsonRpcHttpServerOpenAPIDocExtension implements ExtensionInterface
             $container,
             new FileLocator(__DIR__.'/../Resources/config')
         );
-        $loader->load('services.sdk.yaml');
+        $loader->load('services.sdk.app.yaml');
+        $loader->load('services.sdk.infra.yaml');
         $loader->load('services.public.yaml');
     }
 
