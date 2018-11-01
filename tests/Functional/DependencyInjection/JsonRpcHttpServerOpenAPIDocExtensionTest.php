@@ -24,25 +24,4 @@ class JsonRpcHttpServerOpenAPIDocExtensionTest extends AbstractTestClass
     {
         $this->assertNotNull((new JsonRpcHttpServerOpenAPIDocExtension())->getXsdValidationBasePath());
     }
-
-    public function testShouldBindDocProviderToNormalizedDocFinder()
-    {
-        $docProviderServiceId =  'my-doc-provider';
-        $docProviderServiceDefinition = new Definition(ConcreteDocProvider::class);
-        $docProviderServiceDefinition->addTag(self::EXPECTED_DOC_PROVIDER_TAG);
-
-        $this->setDefinition($docProviderServiceId, $docProviderServiceDefinition);
-
-        $this->load();
-
-        // Assert custom resolver is an alias of the stub
-        $this->assertContainerBuilderHasServiceDefinitionWithMethodCall(
-            self::EXPECTED_NORMALIZED_DOC_FINDER_SERVICE_ID,
-            'addProvider',
-            [new Reference($docProviderServiceId)],
-            0
-        );
-
-        $this->assertDocProviderIsLoadable();
-    }
 }

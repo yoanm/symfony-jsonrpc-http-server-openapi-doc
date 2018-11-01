@@ -93,10 +93,7 @@ class DocProviderTest extends TestCase
             ->shouldBeCalled()
         ;
 
-        $this->assertSame(
-            $normalizedDoc,
-            $this->provider->getDoc($host)
-        );
+        $this->provider->getDoc($host);
     }
 
     public function testShouldSupportOpenJsonFile()

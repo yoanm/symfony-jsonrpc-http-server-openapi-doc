@@ -69,36 +69,6 @@ class DemoAppContext extends AbstractContext
     }
 
     /**
-     * @Then Collector should have :methodClass JSON-RPC method with name :methodName
-     */
-    public function thenCollectorShouldHaveAMethodWithName($methodClass, $methodName)
-    {
-        $kernel = $this->getDemoAppKernel();
-        $kernel->boot();
-        $mappingList = $kernel->getContainer()
-            ->get('mapping_aware_service')
-            ->getMappingList()
-        ;
-        $kernel->shutdown();
-
-        if (!isset($mappingList[$methodName])) {
-            throw new \Exception(sprintf('No mapping defined to method name "%s"', $methodName));
-        }
-        $method = $mappingList[$methodName];
-
-        Assert::assertInstanceOf(
-            JsonRpcMethodInterface::class,
-            $method,
-            'Method must be a JsonRpcMethodInterface instance'
-        );
-        Assert::assertInstanceOf(
-            $methodClass,
-            $method,
-            sprintf('Method "%s" is not an instance of "%s"', $methodName, $methodClass)
-        );
-    }
-
-    /**
      * @return AbstractKernel
      */
     protected function getDemoAppKernel()
