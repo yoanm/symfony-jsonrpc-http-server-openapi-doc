@@ -29,7 +29,7 @@ services:
      - '@json_rpc_http_server_open_api_doc_sdk.app.resolver.definition_ref'
      - '@json_rpc_http_server_open_api_doc_sdk.app.normalizer.component.parameter_doc'
      - '@json_rpc_http_server_open_api_doc_sdk.app.normalizer.component.error'
-  json_rpc_http_server_open_api_doc_sdk.app.normalizer.component.request_doc:
+  json_rpc_http_server_open_api_doc_sdk.app.normalizer.component.request:
     class: Yoanm\JsonRpcHttpServerOpenAPIDoc\App\Normalizer\Component\RequestDocNormalizer
     arguments:
      - '@json_rpc_http_server_open_api_doc_sdk.app.resolver.definition_ref'
@@ -43,5 +43,5 @@ services:
     class: Yoanm\JsonRpcHttpServerOpenAPIDoc\App\Normalizer\Component\OperationDocNormalizer
     arguments:
      - '@json_rpc_http_server_open_api_doc_sdk.app.resolver.definition_ref'
-     - '@json_rpc_http_server_open_api_doc_sdk.app.normalizer.component.request_doc'
+     - '@json_rpc_http_server_open_api_doc_sdk.app.normalizer.component.request'
      - '@json_rpc_http_server_open_api_doc_sdk.app.normalizer.component.response'

@@ -96,7 +96,7 @@ class ConfigFilesTest extends AbstractTestClass
                 'serviceClassName' => ExternalSchemaListDocNormalizer::class,
                 'public' => false,
             ],'SDK - APP - RequestDocNormalizer' => [
-                'serviceId' => 'json_rpc_http_server_open_api_doc_sdk.app.normalizer.component.request_doc',
+                'serviceId' => 'json_rpc_http_server_open_api_doc_sdk.app.normalizer.component.request',
                 'serviceClassName' => RequestDocNormalizer::class,
                 'public' => false,
             ],
