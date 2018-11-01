@@ -77,36 +77,36 @@ class ConfigFilesTest extends AbstractTestClass
                 'public' => false,
             ],
             'SDK - APP - SchemaTypeNormalizer' => [
-                'serviceId' => 'json_rpc_http_server_open_api_doc_sdk.normalizer.app.component.schema_type',
+                'serviceId' => 'json_rpc_http_server_open_api_doc_sdk.app.normalizer.component.schema_type',
                 'serviceClassName' => SchemaTypeNormalizer::class,
                 'public' => false,
             ],
             'SDK - APP - ShapeNormalizer' => [
-                'serviceId' => 'json_rpc_http_server_open_api_doc_sdk.normalizer.app.component.shape',
+                'serviceId' => 'json_rpc_http_server_open_api_doc_sdk.app.normalizer.component.shape',
                 'serviceClassName' => ShapeNormalizer::class,
                 'public' => false,
             ],
             'SDK - APP - ErrorDocNormalizer' => [
-                'serviceId' => 'json_rpc_http_server_open_api_doc_sdk.normalizer.app.component.error',
+                'serviceId' => 'json_rpc_http_server_open_api_doc_sdk.app.normalizer.component.error',
                 'serviceClassName' => ErrorDocNormalizer::class,
                 'public' => false,
             ],
             'SDK - APP - ExternalSchemaListDocNormalizer' => [
-                'serviceId' => 'json_rpc_http_server_open_api_doc_sdk.normalizer.app.component.external_schema_list',
+                'serviceId' => 'json_rpc_http_server_open_api_doc_sdk.app.normalizer.component.external_schema_list',
                 'serviceClassName' => ExternalSchemaListDocNormalizer::class,
                 'public' => false,
             ],'SDK - APP - RequestDocNormalizer' => [
-                'serviceId' => 'json_rpc_http_server_open_api_doc_sdk.normalizer.app.component.request_doc',
+                'serviceId' => 'json_rpc_http_server_open_api_doc_sdk.app.normalizer.component.request_doc',
                 'serviceClassName' => RequestDocNormalizer::class,
                 'public' => false,
             ],
             'SDK - APP - ResponseDocNormalizer' => [
-                'serviceId' => 'json_rpc_http_server_open_api_doc_sdk.normalizer.app.component.response',
+                'serviceId' => 'json_rpc_http_server_open_api_doc_sdk.app.normalizer.component.response',
                 'serviceClassName' => ResponseDocNormalizer::class,
                 'public' => false,
             ],
             'SDK - APP - OperationDocNormalizer' => [
-                'serviceId' => 'json_rpc_http_server_open_api_doc_sdk.normalizer.app.component.operation',
+                'serviceId' => 'json_rpc_http_server_open_api_doc_sdk.app.normalizer.component.operation',
                 'serviceClassName' => OperationDocNormalizer::class,
                 'public' => false,
             ],
