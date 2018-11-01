@@ -1,7 +1,6 @@
 <?php
 namespace Tests\Functional\BehatContext;
 
-use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\PyStringNode;
 use DemoApp\AbstractKernel;
 use DemoApp\DefaultKernel;
@@ -9,7 +8,6 @@ use DemoApp\KernelWithDocCreatedListener;
 use PHPUnit\Framework\Assert;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Yoanm\JsonRpcServer\Domain\JsonRpcMethodInterface;
 
 /**
  * Defines application features from the specific context.
