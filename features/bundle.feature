@@ -201,7 +201,7 @@ Feature: demo symfony application
     """
 
   Scenario: Check that additional information can be added thanks to OpenAPIDocCreatedEvent event
-    Given I will use kernel with ServerDocCreated listener
+    Given I will use kernel with DocCreated listener
     When I send a "GET" request on "/my-custom-doc-endpoint/openapi.json" demoApp kernel endpoint
     Then I should have a "200" response from demoApp with following content:
     """

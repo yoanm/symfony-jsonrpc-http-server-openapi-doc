@@ -27,12 +27,12 @@ abstract class AbstractTestClass extends AbstractExtensionTestCase
         ];
     }
 
-    protected function load(array $configurationValues = [], bool $mockHttpServerDocCreator = true)
+    protected function load(array $configurationValues = [])
     {
         $eventDispatcherDefinition = new Definition(EventDispatcher::class);
         $this->setDefinition('event_dispatcher', $eventDispatcherDefinition);
 
-        // Mock
+        // Mock json-rpc endpoint parameter (used by JsonRpcHttpServerDocExtension)
         $this->container->setParameter('json_rpc_http_server.http_endpoint_path', '/fake-jsonrpc-endpoint');
 
         parent::load($configurationValues);

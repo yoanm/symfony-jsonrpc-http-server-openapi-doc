@@ -42,13 +42,11 @@ class ConfigFilesTest extends AbstractTestClass
 
     public function testDocProviderShouldHaveDocProviderTag()
     {
-        $serviceId = 'json_rpc_http_server_open_api_doc.provider';
-
         $this->load();
 
         // From yoanm/symfony-jsonrpc-http-server
         $this->assertContainerBuilderHasServiceDefinitionWithTag(
-            $serviceId,
+            self::EXPECTED_DOC_PROVIDER_SERVICE_ID,
             JsonRpcHttpServerDocExtension::DOC_PROVIDER_TAG
         );
     }
