@@ -3,25 +3,18 @@ namespace Tests\Common\DependencyInjection;
 
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionTestCase;
 use Symfony\Component\DependencyInjection\Definition;
-use Yoanm\JsonRpcServer\Domain\Model\MethodResolverInterface;
-use Yoanm\SymfonyJsonRpcHttpServer\DependencyInjection\JsonRpcHttpServerExtension;
+use Symfony\Component\EventDispatcher\EventDispatcher;
+use Yoanm\SymfonyJsonRpcHttpServerDoc\DependencyInjection\JsonRpcHttpServerDocExtension;
+use Yoanm\SymfonyJsonRpcHttpServerOpenAPIDoc\DependencyInjection\JsonRpcHttpServerOpenAPIDocExtension;
 
 abstract class AbstractTestClass extends AbstractExtensionTestCase
 {
     // Public services
-    const EXPECTED_ENDPOINT_SERVICE_ID = 'json_rpc_http_server.endpoint';
-    const EXPECTED_SERVICE_NAME_RESOLVER_SERVICE_ID = 'json_rpc_http_server.resolver.service_name';
+    const EXPECTED_DOC_PROVIDER_SERVICE_ID = 'json_rpc_http_server_open_api_doc.provider';
+    const EXPECTED_NORMALIZED_DOC_FINDER_SERVICE_ID = 'json_rpc_http_server_doc.finder.normalized_doc';
 
     // Public tags
-    const EXPECTED_METHOD_RESOLVER_TAG = 'json_rpc_http_server.method_resolver';
-    const EXPECTED_JSONRPC_METHOD_TAG = 'json_rpc_http_server.jsonrpc_method';
-
-    const EXPECTED_JSONRPC_METHOD_TAG_METHOD_NAME_KEY = 'method';
-
-    const EXPECTED_METHOD_MANAGER_SERVICE_ID = 'json_rpc_http_server.sdk.app.manager.method';
-    const EXPECTED_METHOD_RESOLVER_STUB_SERVICE_ID = 'json_rpc_http_server.infra.resolver.method';
-
-    const EXPECTED_HTTP_ENDPOINT_PATH_CONTAINER_PARAM = 'json_rpc_http_server.http_endpoint_path';
+    const EXPECTED_DOC_PROVIDER_TAG = 'json_rpc_server_doc.doc_provider';
 
     /**
      * {@inheritdoc}
@@ -29,63 +22,29 @@ abstract class AbstractTestClass extends AbstractExtensionTestCase
     protected function getContainerExtensions()
     {
         return [
-            new JsonRpcHttpServerExtension()
+            new JsonRpcHttpServerDocExtension(),
+            new JsonRpcHttpServerOpenAPIDocExtension()
         ];
     }
 
-    protected function load(array $configurationValues = [])
+    protected function load(array $configurationValues = [], bool $mockHttpServerDocCreator = true)
     {
+        $eventDispatcherDefinition = new Definition(EventDispatcher::class);
+        $this->setDefinition('event_dispatcher', $eventDispatcherDefinition);
+
+        // Mock
+        $this->container->setParameter('json_rpc_http_server.http_endpoint_path', '/fake-jsonrpc-endpoint');
+
         parent::load($configurationValues);
 
         // And then compile container to have correct injection
         $this->compile();
     }
 
-
-    protected function assertEndpointIsUsable()
+    protected function assertDocProviderIsLoadable()
     {
         // Retrieving this service will imply to load all related dependencies
         // Any binding issues will be raised
-        $this->assertNotNull($this->container->get(self::EXPECTED_ENDPOINT_SERVICE_ID));
-    }
-
-    /**
-     * @param $jsonRpcMethodServiceId
-     */
-    protected function assertJsonRpcMethodServiceIsAvailable($jsonRpcMethodServiceId)
-    {
-        $this->assertNotNull($this->container->get($jsonRpcMethodServiceId));
-    }
-
-    /**
-     * @return Definition
-     */
-    protected function createJsonRpcMethodDefinition()
-    {
-        return (new Definition(\stdClass::class))
-            ->setPrivate(false);
-    }
-
-    /**
-     * @param Definition $definition
-     * @param string     $methodName
-     */
-    protected function addJsonRpcMethodTag(Definition $definition, $methodName)
-    {
-        $definition->addTag(
-            self::EXPECTED_JSONRPC_METHOD_TAG,
-            [self::EXPECTED_JSONRPC_METHOD_TAG_METHOD_NAME_KEY => $methodName]
-        );
-    }
-
-    /**
-     * @return Definition
-     */
-    protected function createCustomMethodResolverDefinition()
-    {
-        $customResolverService = new Definition($this->prophesize(MethodResolverInterface::class)->reveal());
-        $customResolverService->addTag(self::EXPECTED_METHOD_RESOLVER_TAG);
-
-        return $customResolverService;
+        $this->assertNotNull($this->container->get(self::EXPECTED_DOC_PROVIDER_SERVICE_ID));
     }
 }
