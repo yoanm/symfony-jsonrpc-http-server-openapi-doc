@@ -96,7 +96,7 @@ class DocProviderTest extends TestCase
         $this->provider->getDoc($host);
     }
 
-    public function testShouldSupportOpenJsonFile()
+    public function testShouldSupportOpenApiJsonFile()
     {
         $filename = 'openapi.json';
         $this->assertTrue($this->provider->supports($filename));
