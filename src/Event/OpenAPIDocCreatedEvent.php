@@ -30,7 +30,7 @@ class OpenAPIDocCreatedEvent extends DocEvent
     }
 
     /**
-     * @return HttpServerDoc
+     * @return array
      */
     public function getOpenAPIDoc()
     {

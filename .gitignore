@@ -2,3 +2,5 @@ vendor
 build
 #A library must not provide a composer.lock file
 composer.lock
+
+features/demo_app/var/

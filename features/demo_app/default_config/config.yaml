@@ -1,0 +1,8 @@
+framework:
+    secret: '%env(APP_SECRET)%'
+
+json_rpc_http_server:
+    endpoint: '/my-custom-endpoint'
+
+json_rpc_http_server_doc:
+    endpoint: '/my-custom-doc-endpoint'
