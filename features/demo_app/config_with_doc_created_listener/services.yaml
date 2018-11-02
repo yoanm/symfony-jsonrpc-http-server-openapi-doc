@@ -1,0 +1,18 @@
+# Configure JSON-RPC method services.
+services:
+  ## Resolver mock
+  resolver:
+    class: DemoApp\Resolver\JsonRpcMethodResolver
+    tags: ['json_rpc_http_server.method_aware']
+
+
+  # Alias resolver mock to bundle resolver
+  json_rpc_http_server.alias.method_resolver: '@resolver'
+
+  # MethodDocCreated Listener
+  method_doc_created.listener:
+    class: DemoApp\Listener\DocCreatedListener
+    tags:
+      - name: 'kernel.event_listener'
+        event: 'json_rpc_http_server_openapi_doc.array_created'
+        method: 'enhanceMethodDoc'

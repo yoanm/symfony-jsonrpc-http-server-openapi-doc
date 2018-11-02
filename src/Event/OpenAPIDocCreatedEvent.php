@@ -13,34 +13,32 @@ class OpenAPIDocCreatedEvent extends DocEvent
 
     /** @var array */
     private $openAPIDoc;
-    /** @var HttpServerDoc|null */
+    /** @var HttpServerDoc */
     private $serverDoc;
 
     /**
-     * @param array              $openAPIDoc
-     * @param HttpServerDoc|null $serverDoc
+     * @param array         $openAPIDoc
+     * @param HttpServerDoc $serverDoc
      */
-    public function __construct(
-        array $openAPIDoc,
-        HttpServerDoc $serverDoc = null
-    ) {
+    public function __construct(array $openAPIDoc, HttpServerDoc $serverDoc)
+    {
 
         $this->openAPIDoc = $openAPIDoc;
         $this->serverDoc = $serverDoc;
     }
 
     /**
-     * @return HttpServerDoc
+     * @return array
      */
-    public function getOpenAPIDoc()
+    public function getOpenAPIDoc() : array
     {
         return $this->openAPIDoc;
     }
 
     /**
-     * @return HttpServerDoc|null
+     * @return HttpServerDoc
      */
-    public function getServerDoc()
+    public function getServerDoc() : HttpServerDoc
     {
         return $this->serverDoc;
     }
@@ -50,7 +48,7 @@ class OpenAPIDocCreatedEvent extends DocEvent
      *
      * @return OpenAPIDocCreatedEvent
      */
-    public function setOpenAPIDoc(array $openAPIDoc)
+    public function setOpenAPIDoc(array $openAPIDoc) : OpenAPIDocCreatedEvent
     {
         $this->openAPIDoc = $openAPIDoc;
 
