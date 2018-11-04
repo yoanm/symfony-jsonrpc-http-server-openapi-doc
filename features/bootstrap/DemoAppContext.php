@@ -21,14 +21,6 @@ class DemoAppContext extends AbstractContext
     private $useKernelWithDocCreatedListener = false;
 
     /**
-     * @Given I will use kernel with MethodDocCreated listener
-     */
-    public function givenIWillUseMethodDocCreatedListener()
-    {
-        $this->useKernelWithMethodDocCreatedListener = true;
-    }
-
-    /**
      * @Given I will use kernel with DocCreated listener
      */
     public function givenIWillUseKernelWithDocCreatedListener()

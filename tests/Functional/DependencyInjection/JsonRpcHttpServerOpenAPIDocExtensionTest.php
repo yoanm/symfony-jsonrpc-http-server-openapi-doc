@@ -2,7 +2,6 @@
 namespace Tests\Functional\DependencyInjection;
 
 use Tests\Common\DependencyInjection\AbstractTestClass;
-use Yoanm\SymfonyJsonRpcHttpServerOpenAPIDoc\DependencyInjection\JsonRpcHttpServerDocExtension;
 use Yoanm\SymfonyJsonRpcHttpServerOpenAPIDoc\DependencyInjection\JsonRpcHttpServerOpenAPIDocExtension;
 
 /**
