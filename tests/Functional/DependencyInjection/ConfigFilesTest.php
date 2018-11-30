@@ -9,6 +9,7 @@ use Yoanm\JsonRpcHttpServerOpenAPIDoc\App\Normalizer\Component\RequestDocNormali
 use Yoanm\JsonRpcHttpServerOpenAPIDoc\App\Normalizer\Component\ResponseDocNormalizer;
 use Yoanm\JsonRpcHttpServerOpenAPIDoc\App\Normalizer\Component\SchemaTypeNormalizer;
 use Yoanm\JsonRpcHttpServerOpenAPIDoc\App\Normalizer\Component\ShapeNormalizer;
+use Yoanm\JsonRpcHttpServerOpenAPIDoc\App\Normalizer\Component\TypeDocNormalizer;
 use Yoanm\JsonRpcHttpServerOpenAPIDoc\App\Resolver\DefinitionRefResolver;
 use Yoanm\JsonRpcHttpServerOpenAPIDoc\Infra\Normalizer\DocNormalizer;
 use Yoanm\SymfonyJsonRpcHttpServerDoc\DependencyInjection\JsonRpcHttpServerDocExtension;
@@ -79,6 +80,11 @@ class ConfigFilesTest extends AbstractTestClass
             'SDK - APP - SchemaTypeNormalizer' => [
                 'serviceId' => 'json_rpc_http_server_open_api_doc_sdk.app.normalizer.component.schema_type',
                 'serviceClassName' => SchemaTypeNormalizer::class,
+                'public' => false,
+            ],
+            'SDK - APP - TypeDocNormalizer' => [
+                'serviceId' => 'json_rpc_http_server_open_api_doc_sdk.app.normalizer.component.type_doc',
+                'serviceClassName' => TypeDocNormalizer::class,
                 'public' => false,
             ],
             'SDK - APP - ShapeNormalizer' => [
