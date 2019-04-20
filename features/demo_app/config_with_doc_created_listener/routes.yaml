@@ -1,0 +1,6 @@
+# Import default configuration or write your own
+json-rpc-endpoint:
+  resource: '@JsonRpcHttpServerBundle/Resources/config/routing/endpoint.xml'
+
+json-rpc-endpoint-doc:
+  resource: '@JsonRpcHttpServerDocBundle/Resources/config/routing/endpoint.xml'

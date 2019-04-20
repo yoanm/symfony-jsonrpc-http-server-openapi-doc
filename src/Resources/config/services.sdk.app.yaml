@@ -1,0 +1,47 @@
+services:
+  _defaults:
+    public: false
+
+
+  # Def resolver
+  json_rpc_http_server_open_api_doc_sdk.app.resolver.definition_ref:
+    class: Yoanm\JsonRpcHttpServerOpenAPIDoc\App\Resolver\DefinitionRefResolver
+
+  ## Components
+  json_rpc_http_server_open_api_doc_sdk.app.normalizer.component.schema_type:
+    class: Yoanm\JsonRpcHttpServerOpenAPIDoc\App\Normalizer\Component\SchemaTypeNormalizer
+  json_rpc_http_server_open_api_doc_sdk.app.normalizer.component.type_doc:
+    class: Yoanm\JsonRpcHttpServerOpenAPIDoc\App\Normalizer\Component\TypeDocNormalizer
+    arguments:
+     - '@json_rpc_http_server_open_api_doc_sdk.app.normalizer.component.schema_type'
+  json_rpc_http_server_open_api_doc_sdk.app.normalizer.component.shape:
+    class: Yoanm\JsonRpcHttpServerOpenAPIDoc\App\Normalizer\Component\ShapeNormalizer
+    arguments:
+     - '@json_rpc_http_server_open_api_doc_sdk.app.resolver.definition_ref'
+  json_rpc_http_server_open_api_doc_sdk.app.normalizer.component.error:
+    class: Yoanm\JsonRpcHttpServerOpenAPIDoc\App\Normalizer\Component\ErrorDocNormalizer
+    arguments:
+     - '@json_rpc_http_server_open_api_doc_sdk.app.normalizer.component.type_doc'
+     - '@json_rpc_http_server_open_api_doc_sdk.app.normalizer.component.shape'
+  json_rpc_http_server_open_api_doc_sdk.app.normalizer.component.external_schema_list:
+    class: Yoanm\JsonRpcHttpServerOpenAPIDoc\App\Normalizer\Component\ExternalSchemaListDocNormalizer
+    arguments:
+     - '@json_rpc_http_server_open_api_doc_sdk.app.resolver.definition_ref'
+     - '@json_rpc_http_server_open_api_doc_sdk.app.normalizer.component.type_doc'
+     - '@json_rpc_http_server_open_api_doc_sdk.app.normalizer.component.error'
+  json_rpc_http_server_open_api_doc_sdk.app.normalizer.component.request:
+    class: Yoanm\JsonRpcHttpServerOpenAPIDoc\App\Normalizer\Component\RequestDocNormalizer
+    arguments:
+     - '@json_rpc_http_server_open_api_doc_sdk.app.resolver.definition_ref'
+     - '@json_rpc_http_server_open_api_doc_sdk.app.normalizer.component.shape'
+  json_rpc_http_server_open_api_doc_sdk.app.normalizer.component.response:
+    class: Yoanm\JsonRpcHttpServerOpenAPIDoc\App\Normalizer\Component\ResponseDocNormalizer
+    arguments:
+     - '@json_rpc_http_server_open_api_doc_sdk.app.resolver.definition_ref'
+     - '@json_rpc_http_server_open_api_doc_sdk.app.normalizer.component.shape'
+  json_rpc_http_server_open_api_doc_sdk.app.normalizer.component.operation:
+    class: Yoanm\JsonRpcHttpServerOpenAPIDoc\App\Normalizer\Component\OperationDocNormalizer
+    arguments:
+     - '@json_rpc_http_server_open_api_doc_sdk.app.resolver.definition_ref'
+     - '@json_rpc_http_server_open_api_doc_sdk.app.normalizer.component.request'
+     - '@json_rpc_http_server_open_api_doc_sdk.app.normalizer.component.response'
