@@ -19,7 +19,7 @@ class OpenAPIDocCreatedEventTest extends TestCase
     /** @var HttpServerDoc|ObjectProphecy */
     private $serverDoc;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->openAPIDoc = ['openApiDoc'];
         $this->serverDoc = $this->prophesize(HttpServerDoc::class);
