@@ -26,7 +26,7 @@ class DocProviderTest extends TestCase
     /** @var DocNormalizer|ObjectProphecy */
     private $docNormalizer;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->dispatcher = $this->prophesize(EventDispatcherInterface::class);
         $this->httpServerDocCreator = $this->prophesize(HttpServerDocCreator::class);

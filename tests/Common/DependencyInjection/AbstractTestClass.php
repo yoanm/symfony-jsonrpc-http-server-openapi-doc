@@ -27,7 +27,7 @@ abstract class AbstractTestClass extends AbstractExtensionTestCase
         ];
     }
 
-    protected function load(array $configurationValues = [])
+    protected function loadContainer(array $configurationValues = [])
     {
         $eventDispatcherDefinition = new Definition(EventDispatcher::class);
         $this->setDefinition('event_dispatcher', $eventDispatcherDefinition);

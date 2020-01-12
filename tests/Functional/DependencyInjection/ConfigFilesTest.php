@@ -32,7 +32,7 @@ class ConfigFilesTest extends AbstractTestClass
      */
     public function testShouldHaveService($serviceId, $expectedClassName, $public)
     {
-        $this->load();
+        $this->loadContainer();
 
         $this->assertContainerBuilderHasService($serviceId, $expectedClassName);
         if (true === $public) {
@@ -43,7 +43,7 @@ class ConfigFilesTest extends AbstractTestClass
 
     public function testDocProviderShouldHaveDocProviderTag()
     {
-        $this->load();
+        $this->loadContainer();
 
         // From yoanm/symfony-jsonrpc-http-server
         $this->assertContainerBuilderHasServiceDefinitionWithTag(
