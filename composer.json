@@ -1,5 +1,5 @@
 {
-  "name": "yoanm/symfony-jsonrpc-http-server-openapi-doc",
+  "name": "adgoal/symfony-jsonrpc-http-server-openapi-doc",
   "description": "Symfony bundle for easy JSON-RPC server OpenAPI 3.0.0 documentation",
   "license": "MIT",
   "type": "library",
