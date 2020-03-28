@@ -10,6 +10,7 @@ use Yoanm\JsonRpcServerDoc\Domain\Model\HttpServerDoc;
 use Yoanm\SymfonyJsonRpcHttpServerDoc\Creator\HttpServerDocCreator;
 use Yoanm\SymfonyJsonRpcHttpServerOpenAPIDoc\Event\OpenAPIDocCreatedEvent;
 use Yoanm\SymfonyJsonRpcHttpServerOpenAPIDoc\Provider\DocProvider;
+use Yoanm\SymfonyJsonRpcHttpServerSwaggerDoc\Event\SwaggerDocCreatedEvent;
 
 /**
  * @covers \Yoanm\SymfonyJsonRpcHttpServerOpenAPIDoc\Provider\DocProvider
@@ -57,6 +58,14 @@ class DocProviderTest extends TestCase
             ->shouldBeCalled()
         ;
 
+        $this->dispatcher
+            ->dispatch(
+                Argument::type(OpenApiDocCreatedEvent::class),
+                OpenApiDocCreatedEvent::EVENT_NAME
+            )
+            ->shouldBeCalled()
+        ;
+
         $this->assertSame(
             $normalizedDoc,
             $this->provider->getDoc($host)
@@ -83,12 +92,12 @@ class DocProviderTest extends TestCase
 
         $this->dispatcher
             ->dispatch(
-                OpenAPIDocCreatedEvent::EVENT_NAME,
                 Argument::allOf(
                     Argument::type(OpenAPIDocCreatedEvent::class),
                     Argument::which('getOpenAPIDoc', $normalizedDoc),
                     Argument::which('getServerDoc', $rawDoc->reveal())
-                )
+                ),
+                OpenAPIDocCreatedEvent::EVENT_NAME
             )
             ->shouldBeCalled()
         ;
