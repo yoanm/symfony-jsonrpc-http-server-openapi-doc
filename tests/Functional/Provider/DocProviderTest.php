@@ -4,7 +4,7 @@ namespace Tests\Functional\Endpoint;
 use PHPUnit\Framework\TestCase;
 use Prophecy\Argument;
 use Prophecy\Prophecy\ObjectProphecy;
-use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 use Yoanm\JsonRpcHttpServerOpenAPIDoc\Infra\Normalizer\DocNormalizer;
 use Yoanm\JsonRpcServerDoc\Domain\Model\HttpServerDoc;
 use Yoanm\SymfonyJsonRpcHttpServerDoc\Creator\HttpServerDocCreator;
