@@ -4,3 +4,6 @@ build
 composer.lock
 
 features/demo_app/var/
+
+#Phpunit
+.phpunit.result.cache
