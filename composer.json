@@ -6,6 +6,9 @@
   "support": {
     "issues": "https://github.com/yoanm/symfony-jsonrpc-http-server-openapi-doc/issues"
   },
+  "config": {
+    "sort-packages": true
+  },
   "authors": [
     {
       "name": "Yoanm",
@@ -30,18 +33,20 @@
   },
   "require": {
     "php": ">=7.1",
-    "yoanm/jsonrpc-server-doc-sdk": "^0.2",
-    "yoanm/jsonrpc-http-server-openapi-doc-sdk": "^0.2",
-    "yoanm/symfony-jsonrpc-http-server-doc": "^0.2",
+    "symfony/config": "^3.0 || ^4.0",
+    "symfony/dependency-injection": "^3.0 || ^4.0",
+    "symfony/event-dispatcher-contracts": "^1.0 || ^2.0",
     "symfony/http-kernel": "^3.0 || ^4.0",
-    "symfony/dependency-injection": "^3.0 || ^4.0"
+    "yoanm/jsonrpc-http-server-openapi-doc-sdk": "^0.2",
+    "yoanm/jsonrpc-server-doc-sdk": "^0.2",
+    "yoanm/symfony-jsonrpc-http-server-doc": "^0.2"
   },
   "require-dev": {
     "behat/behat": "~3.0",
-    "squizlabs/php_codesniffer": "3.*",
-    "phpunit/phpunit": "^7.0 || ^8.0",
-    "matthiasnoback/symfony-dependency-injection-test": "^3.0 || ^4.0",
     "matthiasnoback/symfony-config-test": "^3.0 || ^4.0",
+    "matthiasnoback/symfony-dependency-injection-test": "^3.0 || ^4.0",
+    "phpunit/phpunit": "^7.0 || ^8.0",
+    "squizlabs/php_codesniffer": "3.*",
     "symfony/framework-bundle": "^3.0 || ^4.0",
     "yoanm/php-unit-extended": "~1.0"
   }
