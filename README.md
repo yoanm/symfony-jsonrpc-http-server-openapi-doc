@@ -4,13 +4,17 @@
 
 [![Scrutinizer Build Status](https://img.shields.io/scrutinizer/build/g/yoanm/symfony-jsonrpc-http-server-openapi-doc.svg?label=Scrutinizer&logo=scrutinizer)](https://scrutinizer-ci.com/g/yoanm/symfony-jsonrpc-http-server-openapi-doc/build-status/master) [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/yoanm/symfony-jsonrpc-http-server-openapi-doc/master.svg?logo=scrutinizer)](https://scrutinizer-ci.com/g/yoanm/symfony-jsonrpc-http-server-openapi-doc/?branch=master) [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/yoanm/symfony-jsonrpc-http-server-openapi-doc/master.svg?logo=scrutinizer)](https://scrutinizer-ci.com/g/yoanm/symfony-jsonrpc-http-server-openapi-doc/?branch=master)
 
-[![Travis Build Status](https://img.shields.io/travis/com/yoanm/symfony-jsonrpc-http-server-openapi-doc/master.svg?label=Travis&logo=travis)](https://travis-ci.com/yoanm/symfony-jsonrpc-http-server-openapi-doc) <!-- NOT WORKING WITH travis-ci.com [![Travis PHP versions](https://img.shields.io/travis/php-v/yoanm/symfony-jsonrpc-http-server-openapi-doc.svg?logo=travis)](https://php.net/) --> [![Travis Symfony Versions](https://img.shields.io/badge/Symfony-v3%20%2F%20v4-8892BF.svg?logo=travis)](https://symfony.com/)
+[![Travis Build Status](https://img.shields.io/travis/com/yoanm/symfony-jsonrpc-http-server-openapi-doc/master.svg?label=Travis&logo=travis)](https://travis-ci.com/yoanm/symfony-jsonrpc-http-server-openapi-doc) <!-- NOT WORKING WITH travis-ci.com [![Travis PHP versions](https://img.shields.io/travis/php-v/yoanm/symfony-jsonrpc-http-server-openapi-doc.svg?logo=travis)](https://php.net/) --> [![Travis Symfony Versions](https://img.shields.io/badge/Symfony-v4%20%2F%20v5-8892BF.svg?logo=travis)](https://symfony.com/)
 
 [![Latest Stable Version](https://img.shields.io/packagist/v/yoanm/symfony-jsonrpc-http-server-openapi-doc.svg)](https://packagist.org/packages/yoanm/symfony-jsonrpc-http-server-openapi-doc) [![Packagist PHP version](https://img.shields.io/packagist/php-v/yoanm/symfony-jsonrpc-http-server-openapi-doc.svg)](https://packagist.org/packages/yoanm/symfony-jsonrpc-http-server-openapi-doc)
 
 Symfony bundle for easy JSON-RPC server OpenAPI 3.0.0 documentation
 
 Symfony bundle for [yoanm/jsonrpc-http-server-openapi-doc-sdk](https://github.com/yoanm/php-jsonrpc-http-server-openapi-doc-sdk)
+
+## Versions
+- Symfony v3/4 - PHP >=7.1 : `^v0.X`
+- Symfony v4/5 - PHP >=7.2 : `^v1.0`
 
 ## How to use
 

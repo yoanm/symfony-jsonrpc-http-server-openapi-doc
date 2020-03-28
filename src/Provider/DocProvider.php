@@ -48,7 +48,7 @@ class DocProvider implements DocProviderInterface
         $openApiDoc = $this->docNormalizer->normalize($rawDoc);
 
         $event = new OpenAPIDocCreatedEvent($openApiDoc, $rawDoc);
-        $this->dispatcher->dispatch($event::EVENT_NAME, $event);
+        $this->dispatcher->dispatch($event, $event::EVENT_NAME);
 
         return $event->getOpenAPIDoc();
     }
