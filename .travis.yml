@@ -8,17 +8,15 @@ php:
 
 env:
   global:
-    CI: 'true'
-    TEST_OUTPUT_STYLE: 'pretty'
-    PHPCS_REPORT_STYLE: 'full'
-    COMPOSER_OPTIONS: '--optimize-autoloader'
-  matrix:
-  - SYMFONY_VERSION: '~3.0'
-  - SYMFONY_VERSION: '~4.0'
+    - CI: 'true'
+    - TEST_OUTPUT_STYLE: 'pretty'
+    - PHPCS_REPORT_STYLE: 'full'
+    - COMPOSER_OPTIONS: '--optimize-autoloader'
+  jobs:
+    - SYMFONY_VERSION: '~3.0'
+    - SYMFONY_VERSION: '~4.0'
 
-sudo: false
-
-matrix:
+jobs:
   fast_finish: true
 
 before_install:
@@ -26,7 +24,7 @@ before_install:
   - phpenv config-rm xdebug.ini || true
 
 install:
-  - composer require symfony/http-kernel:$SYMFONY_VERSION symfony/dependency-injection:$SYMFONY_VERSION
+  - composer require symfony/http-kernel:$SYMFONY_VERSION symfony/dependency-injection:$SYMFONY_VERSION symfony/routing:$SYMFONY_VERSION
   - make build
 script:
   - make test-technical
@@ -41,4 +39,5 @@ branches:
   except:
   - /.*\-dev$/
   - /.*\-patch(\-\d+)?$/
+  - /^dev-.*/
   
