@@ -3,6 +3,7 @@ namespace Tests\Functional\Endpoint;
 
 use PHPUnit\Framework\TestCase;
 use Prophecy\Argument;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Prophecy\Prophecy\ObjectProphecy;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 use Yoanm\JsonRpcHttpServerOpenAPIDoc\Infra\Normalizer\DocNormalizer;
@@ -17,6 +18,8 @@ use Yoanm\SymfonyJsonRpcHttpServerSwaggerDoc\Event\SwaggerDocCreatedEvent;
  */
 class DocProviderTest extends TestCase
 {
+    use ProphecyTrait;
+
     /** @var DocProvider */
     private $provider;
 
