@@ -6,9 +6,6 @@
   "support": {
     "issues": "https://github.com/yoanm/symfony-jsonrpc-http-server-openapi-doc/issues"
   },
-  "config": {
-    "sort-packages": true
-  },
   "authors": [
     {
       "name": "Yoanm",
@@ -55,5 +52,8 @@
     "symfony/framework-bundle": "^4.4 || ^5.4 || ^6.0",
     "symfony/routing": "^4.4 || ^5.4 || ^6.0",
     "yoanm/php-unit-extended": "^2.0.2"
+  },
+  "config": {
+      "sort-packages": true
   }
 }
