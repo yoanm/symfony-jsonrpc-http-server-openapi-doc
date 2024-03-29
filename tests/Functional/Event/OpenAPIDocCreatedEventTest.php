@@ -1,7 +1,8 @@
 <?php
-namespace Tests\Functional\Endpoint;
+namespace Tests\Functional\Event;
 
 use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Prophecy\Prophecy\ObjectProphecy;
 use Yoanm\JsonRpcServerDoc\Domain\Model\HttpServerDoc;
 use Yoanm\SymfonyJsonRpcHttpServerOpenAPIDoc\Event\OpenAPIDocCreatedEvent;
@@ -11,6 +12,8 @@ use Yoanm\SymfonyJsonRpcHttpServerOpenAPIDoc\Event\OpenAPIDocCreatedEvent;
  */
 class OpenAPIDocCreatedEventTest extends TestCase
 {
+    use ProphecyTrait;
+
     /** @var OpenAPIDocCreatedEvent */
     private $event;
 

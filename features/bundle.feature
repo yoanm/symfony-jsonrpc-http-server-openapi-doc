@@ -190,7 +190,16 @@ Feature: demo symfony application
                 "required": ["code"],
                 "properties": {
                   "code": {"example": -32603},
-                  "data": {"type": "object", "nullable": true, "properties": {"previous": {"description": "Previous error message", "type": "string", "nullable": true}}}
+                  "data": {
+                      "type": "object",
+                      "nullable": true,
+                      "properties": {
+                        "_class": {"description": "Exception class", "type": "string", "nullable": true},
+                        "_code":{"description": "Exception code", "type": "integer", "nullable": true},
+                        "_message":{"description": "Exception message", "type": "string", "nullable": true},
+                        "_trace":{"description": "PHP stack trace", "type": "array", "nullable": true, "items":{"type": "string"}}
+                      }
+                    }
                 }
               }
             ]
@@ -256,7 +265,16 @@ Feature: demo symfony application
                 "required": ["code"],
                 "properties": {
                   "code": {"example": -32603},
-                  "data": {"type": "object", "nullable": true, "properties": {"previous": {"description": "Previous error message", "type": "string", "nullable": true}}}
+                  "data": {
+                      "type": "object",
+                      "nullable": true,
+                      "properties": {
+                        "_class": {"description": "Exception class", "type": "string", "nullable": true},
+                        "_code":{"description": "Exception code", "type": "integer", "nullable": true},
+                        "_message":{"description": "Exception message", "type": "string", "nullable": true},
+                        "_trace":{"description": "PHP stack trace", "type": "array", "nullable": true, "items":{"type": "string"}}
+                      }
+                    }
                 }
               }
             ]

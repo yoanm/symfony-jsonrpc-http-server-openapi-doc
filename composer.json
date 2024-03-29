@@ -6,9 +6,6 @@
   "support": {
     "issues": "https://github.com/yoanm/symfony-jsonrpc-http-server-openapi-doc/issues"
   },
-  "config": {
-    "sort-packages": true
-  },
   "authors": [
     {
       "name": "Yoanm",
@@ -32,24 +29,31 @@
     "yoanm/symfony-jsonrpc-http-server": "Symfony Bundle to convert an HTTP json-rpc request into HTTP json-rpc response"
   },
   "require": {
-    "php": ">=7.2",
-    "symfony/config": "^4.0 || ^5.0",
-    "symfony/dependency-injection": "^4.0 || ^5.0",
+    "php": "^8.0",
+    "symfony/config": "^4.4 || ^5.4 || ^6.0",
+    "symfony/dependency-injection": "^4.4 || ^5.4 || ^6.0",
     "symfony/event-dispatcher-contracts": "^1.0 || ^2.0",
-    "symfony/http-kernel": "^4.0 || ^5.0",
-    "yoanm/jsonrpc-http-server-openapi-doc-sdk": "^0.2",
-    "yoanm/jsonrpc-server-doc-sdk": "^0.2",
-    "yoanm/symfony-jsonrpc-http-server-doc": "^1.0"
+    "symfony/http-kernel": "^4.4 || ^5.4 || ^6.0",
+    "yoanm/jsonrpc-http-server-openapi-doc-sdk": "^v1.0",
+    "yoanm/jsonrpc-server-doc-sdk": "^v1.0",
+    "yoanm/symfony-jsonrpc-http-server-doc": "^1.1"
   },
   "require-dev": {
-    "behat/behat": "~3.0",
-    "matthiasnoback/symfony-config-test": "^3.0 || ^4.0",
-    "matthiasnoback/symfony-dependency-injection-test": "^3.0 || ^4.0",
-    "phpunit/phpunit": "^7.0 || ^8.0",
-    "squizlabs/php_codesniffer": "3.*",
-    "symfony/event-dispatcher": "^4.0 || ^5.0",
-    "symfony/framework-bundle": "^4.0 || ^5.0",
-    "symfony/routing": "^4.0 || ^5.0",
-    "yoanm/php-unit-extended": "~1.0"
+    "behat/behat": "^3.9.0",
+    "dvdoug/behat-code-coverage": "^5.0",
+    "matthiasnoback/symfony-config-test": "^4.0",
+    "matthiasnoback/symfony-dependency-injection-test": "^4.0",
+    "phpspec/prophecy": "^1.15",
+    "phpspec/prophecy-phpunit": "^2.0",
+    "phpunit/php-code-coverage": "^9.2.4",
+    "phpunit/phpunit": "^9.0",
+    "squizlabs/php_codesniffer": "^3.5",
+    "symfony/event-dispatcher": "^4.4 || ^5.4 || ^6.0",
+    "symfony/framework-bundle": "^4.4 || ^5.4 || ^6.0",
+    "symfony/routing": "^4.4 || ^5.4 || ^6.0",
+    "yoanm/php-unit-extended": "^2.0.2"
+  },
+  "config": {
+      "sort-packages": true
   }
 }
