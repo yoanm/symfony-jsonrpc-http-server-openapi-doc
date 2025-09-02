@@ -1,10 +1,10 @@
 version: 2
 updates:
-  #
-  #
-  # [GHAction]
-  # Based on https://github.com/yoanm/shared-config/blob/master/GitHub/dependabot/github-action.yml file
-  #
+#
+#
+# [GHAction]
+# Based on https://github.com/yoanm/shared-config/blob/master/GitHub/dependabot/github-action.yml file
+#
   - package-ecosystem: github-actions
     directory: /
     schedule:
@@ -14,22 +14,22 @@ updates:
       prefix: '[dependabot][ghaction] - ' # No need to specify prod/dev for GHAction as there is only "production" updates !
       include: scope
     groups:
-      # Group all basic updates inside the a single PR
-      # No need to split prod/dev as there is only prod updates
+# Group all basic updates inside the a single PR
+# No need to split prod/dev as there is only prod updates
       all-actions:
         applies-to: version-updates
         patterns: ['*']
-      # Group all security updates inside the a single PR
-      # No need to split prod/dev as there is only prod updates
-      # +Most likely no need to split major and other updates either
+# Group all security updates inside the a single PR
+# No need to split prod/dev as there is only prod updates
+# +Most likely no need to split major and other updates either
       SECURITY-all:
         applies-to: security-updates
         patterns: ['*']
-  #
-  #
-  # [Composer]
-  # Based on https://github.com/yoanm/shared-config/blob/master/GitHub/dependabot/composer.yml file
-  #
+#
+#
+# [Composer]
+# Based on https://github.com/yoanm/shared-config/blob/master/GitHub/dependabot/composer.yml file
+#
   - package-ecosystem: composer
     directory: /
     schedule: # Create PRs during week-ends, they will be ready on monday morning
@@ -41,9 +41,9 @@ updates:
       prefix-development: '[dependabot][dev][composer] - '
       include: scope
     groups:
-      # Split basic updates by:
-      #  - prod vs dev
-      #  - major vs others (assuming packages properly follow semver !)
+# Split basic updates by:
+#  - prod vs dev
+#  - major vs others (assuming packages properly follow semver !)
       prod-majors:
         applies-to: version-updates
         dependency-type: production
@@ -62,9 +62,9 @@ updates:
         applies-to: version-updates
         dependency-type: development
         patterns: ['*']
-      # Split security updates by:
-      #  - prod vs dev
-      #  - Major prod updates vs other prod updates
+# Split security updates by:
+#  - prod vs dev
+#  - Major prod updates vs other prod updates
       SECURITY-prod-major:
         applies-to: security-updates
         dependency-type: production

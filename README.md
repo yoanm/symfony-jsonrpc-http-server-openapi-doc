@@ -2,7 +2,8 @@
 
 [![License](https://img.shields.io/github/license/yoanm/symfony-jsonrpc-http-server-openapi-doc.svg)](https://github.com/yoanm/symfony-jsonrpc-http-server-openapi-doc)
 [![Code size](https://img.shields.io/github/languages/code-size/yoanm/symfony-jsonrpc-http-server-openapi-doc.svg)](https://github.com/yoanm/symfony-jsonrpc-http-server-openapi-doc)
-[![Dependabot Status](https://api.dependabot.com/badges/status?host=github\&repo=yoanm/symfony-jsonrpc-http-server-openapi-doc)](https://dependabot.com)
+![Dependabot Status](https://flat.badgen.net/github/dependabot/yoanm/symfony-jsonrpc-http-server-openapi-doc)
+![Last commit](https://badgen.net/github/last-commit/yoanm/symfony-jsonrpc-http-server-openapi-doc)
 
 [![Scrutinizer Build Status](https://img.shields.io/scrutinizer/build/g/yoanm/symfony-jsonrpc-http-server-openapi-doc.svg?label=Scrutinizer\&logo=scrutinizer)](https://scrutinizer-ci.com/g/yoanm/symfony-jsonrpc-http-server-openapi-doc/build-status/master)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/yoanm/symfony-jsonrpc-http-server-openapi-doc/master.svg?logo=scrutinizer)](https://scrutinizer-ci.com/g/yoanm/symfony-jsonrpc-http-server-openapi-doc/?branch=master)
