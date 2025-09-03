@@ -36,7 +36,7 @@
     "symfony/http-kernel": "^5.4 || ^6.4 || ^7.0",
     "yoanm/jsonrpc-http-server-openapi-doc-sdk": "^v1.0",
     "yoanm/jsonrpc-server-doc-sdk": "^v1.0",
-    "yoanm/symfony-jsonrpc-http-server-doc": "^1.1 || dev-feature/increase-supported-versions-sf7.0"
+    "yoanm/symfony-jsonrpc-http-server-doc": "^1.1 || ^2.0"
   },
   "require-dev": {
     "behat/behat": "^3.9.0,<=3.16.1",
