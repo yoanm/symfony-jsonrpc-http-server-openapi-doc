@@ -11,7 +11,7 @@
 
 [![CI](https://github.com/yoanm/symfony-jsonrpc-http-server-openapi-doc/actions/workflows/CI.yml/badge.svg?branch=master)](https://github.com/yoanm/symfony-jsonrpc-http-server-openapi-doc/actions/workflows/CI.yml)
 [![codecov](https://codecov.io/gh/yoanm/symfony-jsonrpc-http-server-openapi-doc/branch/master/graph/badge.svg?token=NHdwEBUFK5)](https://codecov.io/gh/yoanm/symfony-jsonrpc-http-server-openapi-doc)
-[![Symfony Versions](https://img.shields.io/badge/Symfony-v4.4%20%2F%20v5.4%2F%20v6.x-8892BF.svg?logo=github)](https://symfony.com/)
+[![Symfony Versions](https://img.shields.io/badge/Symfony-v5.4%20%2F%20v6.4%20%2F%20v7.x-8892BF.svg?logo=github)](https://symfony.com/)
 
 [![Latest Stable Version](https://img.shields.io/packagist/v/yoanm/symfony-jsonrpc-http-server-openapi-doc.svg)](https://packagist.org/packages/yoanm/symfony-jsonrpc-http-server-openapi-doc)
 [![Packagist PHP version](https://img.shields.io/packagist/php-v/yoanm/symfony-jsonrpc-http-server-openapi-doc.svg)](https://packagist.org/packages/yoanm/symfony-jsonrpc-http-server-openapi-doc)
@@ -24,6 +24,8 @@ Symfony bundle for [yoanm/jsonrpc-http-server-openapi-doc-sdk](https://github.co
 
 * Symfony v3/4 - PHP >=7.1 : `^v0.X`
 * Symfony v4/5 - PHP >=7.2 : `^v1.0`
+* Symfony v4.4/5.4/6.0 - PHP ^8.0 : `^v2.0`
+* Symfony v5.4/6.4/7.0 - PHP ^8.0 : `^v3.0`
 
 ## How to use
 
